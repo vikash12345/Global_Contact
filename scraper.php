@@ -4,9 +4,6 @@
 
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
-// Global Directory for USA 
-//http://globalcontact.com/gc/directory/search.php?table=USBIZ&company=a&search=&search_sic=&page=1
-//My Scraper will scrape data A to Z and check whole pagination.
 $Alpha=array('1');
 //$Alpha=array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
 for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++) 
@@ -27,7 +24,11 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 			$mainpage	=	file_get_html($pagination);
 			if($mainpage)
 			{
-				echo $mainpage;
+				foreach($mainpage->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[4]") as $element)
+				{
+					$linkofinnerpages	=	$element->find("//td/a[plaintext^=View Company Profile: Additional Detail of Product and Services]",0)->href;
+					echo $linkofinnerpages.'<br>';
+				}
 			}
 			
 		}
@@ -35,5 +36,4 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 	}
 	
 }
-
 ?>
