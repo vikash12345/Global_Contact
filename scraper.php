@@ -26,7 +26,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 			{
 				foreach($mainpage->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[4]") as $element)
 				{
-					$linkofinnerpages	=	$element->find("//td/a[plaintext^=View Company Profile: Additional Detail of Product and Services]",0)->href;
+					$linkofinnerpages	=	$element->find("//table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/a[plaintext^=View Company Profile: Additional Detail of Product and Services]",0)->href;
 					echo "$linkofinnerpages\n";
 				}
 			}
