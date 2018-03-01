@@ -27,7 +27,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 			{
 				foreach($mainpage->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[4]/div") as $element)
 				{										                       
-					$linkofinnerpages	=	$element->find("table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/a",0)->plaintext;->href;
+					$linkofinnerpages	=	$element->find("table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/a",0)->href;
 					$innerpage			=	'http://globalcontact.com/gc/directory/'.$linkofinnerpages;
 					
 					if($innerpage 		!= 'http://globalcontact.com/gc/directory/')
