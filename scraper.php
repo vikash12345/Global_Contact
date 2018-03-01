@@ -10,7 +10,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 {
 	
 	$NewLink	=	"http://globalcontact.com/gc/directory/search.php?table=USBIZ&company=$Alpha[$outterloop]&search=&search_sic=&page=1";
-	echo "$NewLink\n";
+	
 	$html		=	file_get_html($NewLink);
 	sleep(5);
 	if($html)
@@ -22,6 +22,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 		for ($pagestart = 1; $pagestart <= $pages; $pagestart++) 	
 		{
 			$pagination = "http://globalcontact.com/gc/directory/search.php?table=USBIZ&company=$Alpha[$outterloop]&search=&search_sic=&page=$pagestart";
+			echo "$pagination\n";
 			$mainpage	=	file_get_html($pagination);
 			sleep(20);
 			if($mainpage)
