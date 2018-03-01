@@ -25,7 +25,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 			echo "$pagination\n";
 			$mainpage	=	file_get_html($pagination);
 			sleep(20);
-			if($mainpage)
+			if($mainpage )
 			{
 				foreach($mainpage->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[4]/div") as $element)
 				{										                       
@@ -34,9 +34,8 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 					
 					if($innerpage 		!= 'http://globalcontact.com/gc/directory/')
 					{
-						
-						$html	   		 =		file_get_html($inpage);
 						$inpage			 =	$innerpage;
+						$html	   		 =		file_get_html($inpage);
 						sleep(8);
 						
 						//Name of Company 	
