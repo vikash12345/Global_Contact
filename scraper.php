@@ -27,7 +27,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 			{
 				foreach($mainpage->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[4]/div") as $element)
 				{										                       
-					$linkofinnerpages	=	$element->find("table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/a",0)->href;
+					$linkofinnerpages	=	$element->find("table/tbody/tr[3]/td/div/table/tbody/tr/td[1]/a",0)->plaintext;->href;
 					$innerpage			=	'http://globalcontact.com/gc/directory/'.$linkofinnerpages;
 					
 					if($innerpage 		!= 'http://globalcontact.com/gc/directory/')
@@ -37,41 +37,41 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 						sleep(8);
 						
 						//Name of Company 	
-						$name 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[1]/b",0);
+						$name 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[1]/b",0)->plaintext;;
 
 						//address.
-						$address 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]",0);
+						$address 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]",0)->plaintext;;
 						
 						
 						//This is for city
-						$city 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]",0);
+						$city 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]",0)->plaintext;;
 						
 						//This is for State
-						$state 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]",0);
+						$state 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]",0)->plaintext;;
 						
 						//This is for Zipcode
-						$zipcode 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[4]/td[2]",0);
+						$zipcode 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[4]/td[2]",0)->plaintext;;
 						
 						//This is for Website
-						$website 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[5]/td[2]",0);
+						$website 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[1]/table/tbody/tr[5]/td[2]",0)->plaintext;;
 						
 						//This is for contact
-						$contact 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[1]/td[2]",0);
+						$contact 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[1]/td[2]",0)->plaintext;;
 						
 						
 						//This is for title
-						$title 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]",0);
+						$title 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]",0)->plaintext;;
 						
 						//This is for phone
-						$phone 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[3]/td[2]",0);
+						$phone 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[3]/td[2]",0)->plaintext;;
 						
 						
 						//This is for fax
-						$fax 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[4]/td[2]",0);
+						$fax 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[4]/td[2]",0)->plaintext;;
 						
 						
 						//This is for email
-						$email 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[5]/td[2]/a",0);
+						$email 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[5]/td[2]/a",0)->plaintext;;
 						
 						
 						
