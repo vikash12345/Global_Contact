@@ -10,9 +10,8 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 {
 	
 	$NewLink	=	"http://globalcontact.com/gc/directory/search.php?table=USBIZ&company=$Alpha[$outterloop]&search=&search_sic=&page=1";
-	
 	$html		=	file_get_html($NewLink);
-	sleep(5);
+	sleep(8);
 	if($html)
 	{
 		$link		=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[4]/center/div/a[11]", 0);
@@ -36,7 +35,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 					{
 						$inpage			 =	$innerpage;
 						$html	   		 =		file_get_html($inpage);
-						sleep(8);
+						sleep(10);
 						
 						//Name of Company 	
 						$name 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[1]/b",0)->plaintext;;
@@ -75,22 +74,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 						//This is for email
 						$email 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[3]/table/tbody/tr/td[2]/table/tbody/tr[5]/td[2]/a",0)->plaintext;;
 						
-						
-						
-						 echo 'name '.$name.
-						' address ' . $address.
-						' city ' . $city.
-						' state ' . $state.
-						' zipcode ' . $zipcode.
-						' website ' . $website.
-						' contact ' . $contact.
-						' title ' . $title.
-						' phone ' . $phone.
-						' fax ' . $fax.
-						' email ' . $email;
-						
-						
-						
+	
 					
 		$record = array( 'name' =>$name, 
 		   'address' => $address,
