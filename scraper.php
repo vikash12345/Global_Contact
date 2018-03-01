@@ -4,12 +4,13 @@ require 		'scraperwiki/simple_html_dom.php';
 // Global Directory for USA 
 //http://globalcontact.com/gc/directory/search.php?table=USBIZ&company=a&search=&search_sic=&page=1
 //My Scraper will scrape data A to Z and check whole pagination.
-$Alpha=array('1');
-//$Alpha=array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+//$Alpha=array('1');
+$Alpha=array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
 for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++) 
 {
 	
 	$NewLink	=	"http://globalcontact.com/gc/directory/search.php?table=USBIZ&company=$Alpha[$outterloop]&search=&search_sic=&page=1";
+	echo "$NewLink\n";
 	$html		=	file_get_html($NewLink);
 	sleep(5);
 	if($html)
@@ -32,8 +33,9 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 					
 					if($innerpage 		!= 'http://globalcontact.com/gc/directory/')
 					{
-						$inpage			 =	$innerpage;
+						
 						$html	   		 =		file_get_html($inpage);
+						$inpage			 =	$innerpage;
 						sleep(8);
 						
 						//Name of Company 	
