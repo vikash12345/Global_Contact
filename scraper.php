@@ -14,6 +14,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 	sleep(8);
 	if($html)
 	{
+		sleep(120);
 		$link		=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[4]/center/div/a[11]", 0);
 		$checker	=	 $link->href.'<br>';
 		$paginationlink	=	"http://www.globalcontact.com/gc/directory/$checker";
@@ -23,7 +24,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 			$pagination = "http://globalcontact.com/gc/directory/search.php?table=USBIZ&company=$Alpha[$outterloop]&search=&search_sic=&page=$pagestart";
 			echo "$pagination\n";
 			$mainpage	=	file_get_html($pagination);
-			sleep(20);
+			sleep(120);
 			if($mainpage )
 			{
 				foreach($mainpage->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[4]/div") as $element)
@@ -35,7 +36,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 					{
 						$inpage			 =	$innerpage;
 						$html	   		 =		file_get_html($inpage);
-						sleep(10);
+						sleep(60);
 						
 						//Name of Company 	
 						$name 	=	$html->find("/html/body/center/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[2]/div/div[1]/b",0)->plaintext;;
