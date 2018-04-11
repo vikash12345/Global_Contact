@@ -6,7 +6,7 @@ require 		'scraperwiki/simple_html_dom.php';
 //My Scraper will scrape data A to Z and check whole pagination.
 //$Alpha=array('1');
 $Alpha=array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
-for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++) 
+for ($outterloop = 54; $outterloop < sizeof($Alpha); $outterloop++) 
 {
 	
 	$NewLink	=	"http://globalcontact.com/gc/directory/search.php?table=USBIZ&company=$Alpha[$outterloop]&search=&search_sic=&page=1";
