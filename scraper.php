@@ -9,7 +9,8 @@ $Alpha=array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'
 for ($outterloop = 54; $outterloop < sizeof($Alpha); $outterloop++) 
 {
 	
-	$NewLink	=	"http://globalcontact.com/gc/directory/search.php?table=USBIZ&company=$Alpha[$outterloop]&search=&search_sic=&page=1";
+	$NewLink	=	"http://globalcontact.com/search.php?table=USBIZ&company=$Alpha[$outterloop]&search=&search_sic=&page=1";
+	echo $NewLink;die();
 	$html		=	file_get_html($NewLink);
 	sleep(8);
 	if($html)
